@@ -13,7 +13,6 @@ public class StableBuilding extends VillageBuildings {
 
     public StableBuilding(String name, int startOfBuildingName, int endOfBuildingName, int startOfLevelBuilding, int endOfLevelBuilding) {
         super(name, startOfBuildingName, endOfBuildingName, startOfLevelBuilding, endOfLevelBuilding);
+
     }
-
-
 }

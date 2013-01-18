@@ -1,5 +1,6 @@
 package com.gmail.ttkyle.src;
 
+import com.gmail.ttkyle.com.gmail.ttkyle.buildings.StableBuilding;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -510,27 +511,14 @@ public class Village {
 
     //Sends the level of stable to the GUI
     public static void setStable() {
-
-        for(int i = 2; i < 20; i++) {
-            try {
-                String stableLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(stableLabel, 0, 6).equals("Stable")) {
-                    BuildPanel.setStableLabel("Stable " + substring(stableLabel, 7, 17));
-                    if(substring(stableLabel, 7, 17).equals("")) {
-                        BuildPanel.setStableLabel("Stable (Level 0)");
-                        BuildPanel.setStableButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setStableLabel("Stable (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeStableLabel("Cannot upgrade");
-                BuildPanel.setStableButtonTrueOrFalse(false);
-                BuildPanel.setStableLabel("Stable max level");
-            }
+        StableBuilding stableBuilding = null;
+        try {
+            stableBuilding = new StableBuilding("Stable", 0, 6, 7, 17);
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeStableLabel("Cannot upgrade");
+            BuildPanel.setStableButtonTrueOrFalse(false);
+            BuildPanel.setStableLabel(stableBuilding.getBuildingName() + " max level");
         }
     }
 
