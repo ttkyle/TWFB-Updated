@@ -1,6 +1,5 @@
 package com.gmail.ttkyle.src;
 
-import com.gmail.ttkyle.com.gmail.ttkyle.buildings.StableBuilding;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -453,67 +452,40 @@ public class Village {
     //Sends the level of villageHQ to the GUI
     public static void setVillageHQ() {
 
-        //loop through the building rows
-        for(int i = 2; i < 20; i++) {
-            try {
-                String villageHQLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-
-                //if the building was found then set the name and level
-                if(substring(villageHQLabel, 0, 7).equals("Village")) {
-                    BuildPanel.setVillageHQLabel("Village HQ " + substring(villageHQLabel, 21, 31));
-
-                    //if the building level is not present then make it level 0
-                    if(substring(villageHQLabel, 21, 31).equals("")) {
-                        BuildPanel.setVillageHQLabel("Village HQ (Level 0)");
-                        BuildPanel.setVillageHQButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                //if the building is not found at all make it level 0
-                else {
-                    BuildPanel.setVillageHQLabel("Village HQ (Level 0)");
-                }
-            }
-            //if the element does not exist on the webpage then it's max level
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeVillageHQLabel("Cannot upgrade");
-                BuildPanel.setVillageHQButtonTrueOrFalse(false);
-                BuildPanel.setVillageHQLabel("Village max level");
-            }
+        VillageBuildings villageBuilding = null;
+        try {
+            villageBuilding = new VillageBuildings("Village", 0, 7, 21, 31);
+            villageBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeVillageHQLabel("Cannot upgrade");
+            BuildPanel.setVillageHQButtonTrueOrFalse(false);
+            BuildPanel.setVillageHQLabel(villageBuilding.getBuildingName() + " max level");
         }
     }
 
     //Sends the level of barracks to the GUI
     public static void setBarracks() {
 
-        for(int i = 2; i < 20; i++) {
-            try {
-                String barracksLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(barracksLabel, 0, 8).equals("Barracks")) {
-                    BuildPanel.setBarracksLabel("Barracks " + substring(barracksLabel, 9, 20));
-                    if(substring(barracksLabel, 9, 20).equals("")) {
-                        BuildPanel.setBarracksLabel("Barracks (Level 0)");
-                        BuildPanel.setBarracksButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setBarracksLabel("Barracks (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeBarracksLabel("Cannot upgrade");
-                BuildPanel.setBarracksButtonTrueOrFalse(false);
-                BuildPanel.setBarracksLabel("Barracks max level");
-            }
+        VillageBuildings barracksBuilding = null;
+        try {
+            barracksBuilding = new VillageBuildings("Barracks", 0, 8, 9, 20);
+            barracksBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeBarracksLabel("Cannot upgrade");
+            BuildPanel.setBarracksButtonTrueOrFalse(false);
+            BuildPanel.setBarracksLabel(barracksBuilding.getBuildingName() + " max level");
         }
     }
 
     //Sends the level of stable to the GUI
     public static void setStable() {
-        StableBuilding stableBuilding = null;
+
+        VillageBuildings stableBuilding = null;
         try {
-            stableBuilding = new StableBuilding("Stable", 0, 6, 7, 17);
+            stableBuilding = new VillageBuildings("Stable", 0, 6, 7, 17);
+            stableBuilding.setBuilding();
         }
         catch (NoSuchElementException e) {
             BuildPanel.setUpgradeStableLabel("Cannot upgrade");
@@ -525,286 +497,166 @@ public class Village {
     //Sends the level of workshop to the GUI
     public static void setWorkShop() {
 
-        for(int i = 2; i < 20; i++) {
-            try {
-                String workShopLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(workShopLabel, 0, 8).equals("Workshop")) {
-                    BuildPanel.setWorkShopLabel("Workshop " + substring(workShopLabel, 9, 19));
-                    if(substring(workShopLabel, 9, 19).equals("")) {
-                        BuildPanel.setWorkShopLabel("Workshop (Level 0)");
-                        BuildPanel.setWorkShopButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setWorkShopLabel("Workshop (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeWorkShopLabel("Cannot upgrade");
-                BuildPanel.setWorkShopButtonTrueOrFalse(false);
-                BuildPanel.setWorkShopLabel("Workshop max level");
-            }
+
+        VillageBuildings workShopBuilding = null;
+        try {
+            workShopBuilding = new VillageBuildings("Workshop", 0, 8, 9, 19);
+            workShopBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeWorkShopLabel("Cannot upgrade");
+            BuildPanel.setWorkShopButtonTrueOrFalse(false);
+            BuildPanel.setWorkShopLabel(workShopBuilding.getBuildingName() + " max level");
         }
     }
 
     //Sends the level of smithy to the GUI
     public static void setSmithy() {
 
-        for(int i = 2; i < 20; i++) {
-            try {
-                String smithyLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(smithyLabel, 0, 6).equals("Smithy")) {
-                    BuildPanel.setSmithyLabel("Smithy " + substring(smithyLabel, 7, 17));
-                    if(substring(smithyLabel, 7, 17).equals("")) {
-                        BuildPanel.setSmithyLabel("Smithy (Level 0)");
-                        BuildPanel.setSmithyButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setSmithyLabel("Smithy (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeSmithyLabel("Cannot upgrade");
-                BuildPanel.setSmithyButtonTrueOrFalse(false);
-                BuildPanel.setSmithyLabel("Smithy max level");
-            }
+        VillageBuildings smithyBuilding = null;
+        try {
+            smithyBuilding = new VillageBuildings("Smithy", 0, 6, 7, 17);
+            smithyBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeSmithyLabel("Cannot upgrade");
+            BuildPanel.setSmithyButtonTrueOrFalse(false);
+            BuildPanel.setSmithyLabel(smithyBuilding.getBuildingName() + " max level");
         }
     }
 
     //Sends the level of market to the GUI
     public static void setMarket() {
 
-        for(int i = 2; i < 20; i++) {
-            try {
-                String marketLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(marketLabel, 0, 6).equals("Market")) {
-                    BuildPanel.setMarketLabel("Market " + substring(marketLabel, 7, 17));
-                    if(substring(marketLabel, 7, 17).equals("")) {
-                        BuildPanel.setMarketLabel("Market (Level 0)");
-                        BuildPanel.setMarketButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setMarketLabel("Market (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeMarketLabel("Cannot upgrade");
-                BuildPanel.setMarketButtonTrueOrFalse(false);
-                BuildPanel.setMarketLabel("Market max level");
-            }
+        VillageBuildings marketBuilding = null;
+        try {
+            marketBuilding = new VillageBuildings("Market", 0, 6, 7, 17);
+            marketBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeMarketLabel("Cannot upgrade");
+            BuildPanel.setMarketButtonTrueOrFalse(false);
+            BuildPanel.setMarketLabel(marketBuilding.getBuildingName() + " max level");
         }
     }
 
     //Sends the level of timber to the GUI
     public static void setTimber() {
 
-        for(int i = 2; i < 20; i++) {
-            try {
-                String timberLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(timberLabel, 0, 6).equals("Timber")) {
-                    BuildPanel.setTimberLabel("Timber " + substring(timberLabel, 12, 22));
-                    if(substring(timberLabel, 12, 22).equals("")) {
-                        BuildPanel.setTimberLabel("Timber (Level 0)");
-                        BuildPanel.setTimberButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setTimberLabel("Timber (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeTimberLabel("Cannot upgrade");
-                BuildPanel.setTimberButtonTrueOrFalse(false);
-                BuildPanel.setTimberLabel("Timber max level");
-            }
+        VillageBuildings timberBuilding = null;
+        try {
+            timberBuilding = new VillageBuildings("Timber", 0, 6, 7, 17);
+            timberBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeTimberLabel("Cannot upgrade");
+            BuildPanel.setTimberButtonTrueOrFalse(false);
+            BuildPanel.setTimberLabel(timberBuilding.getBuildingName() + " max level");
         }
     }
 
     //Sends the level of clay to the GUI
     public static void setClay() {
 
-        for(int i = 2; i < 20; i++) {
-            try {
-                String clayLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(clayLabel, 0, 4).equals("Clay")) {
-                    BuildPanel.setClayLabel("Clay " + substring(clayLabel, 5, 19));
-                    if(substring(clayLabel, 9, 19).equals("")) {
-                        BuildPanel.setClayLabel("Clay (Level 0)");
-                        BuildPanel.setClayButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setClayLabel("Clay (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeClayLabel("Cannot upgrade");
-                BuildPanel.setClayButtonTrueOrFalse(false);
-                BuildPanel.setClayLabel("Clay max level");
-            }
+        VillageBuildings clayBuilding = null;
+        try {
+            clayBuilding = new VillageBuildings("Clay", 0, 4, 5, 19);
+            clayBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeClayLabel("Cannot upgrade");
+            BuildPanel.setClayButtonTrueOrFalse(false);
+            BuildPanel.setClayLabel(clayBuilding.getBuildingName() + " max level");
         }
     }
 
     //Sends the level of iron to the GUI
     public static void setIron() {
 
-        for(int i = 2; i < 20; i++) {
-            try {
-                String ironLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(ironLabel, 0, 4).equals("Iron")) {
-                    BuildPanel.setIronLabel("Iron " + substring(ironLabel, 5, 20));
-                    if(substring(ironLabel, 10, 20).equals("")) {
-                        BuildPanel.setIronLabel("Iron (Level 0)");
-                        BuildPanel.setIronButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setIronLabel("Iron (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeIronLabel("Cannot upgrade");
-                BuildPanel.setIronButtonTrueOrFalse(false);
-                BuildPanel.setIronLabel("Iron max level");
-            }
+        VillageBuildings ironBuilding = null;
+        try {
+            ironBuilding = new VillageBuildings("Iron", 0, 4, 5, 20);
+            ironBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeIronLabel("Cannot upgrade");
+            BuildPanel.setIronButtonTrueOrFalse(false);
+            BuildPanel.setIronLabel(ironBuilding.getBuildingName() + " max level");
         }
     }
 
     //Sends the level of farm to the GUI
     public static void setFarm() {
 
-        for(int i = 2; i < 20; i++) {
-            try {
-                String farmLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(farmLabel, 0, 4).equals("Farm")) {
-                    BuildPanel.setFarmLabel("Farm " + substring(farmLabel, 5, 15));
-                    if(substring(farmLabel, 5, 15).equals("")) {
-                        BuildPanel.setFarmLabel("Farm (Level 0)");
-                        BuildPanel.setFarmButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setFarmLabel("Farm (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeFarmLabel("Cannot upgrade");
-                BuildPanel.setFarmButtonTrueOrFalse(false);
-                BuildPanel.setFarmLabel("Farm max level");
-            }
+        VillageBuildings farmBuilding = null;
+        try {
+            farmBuilding = new VillageBuildings("Farm", 0, 4, 5, 15);
+            farmBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeFarmLabel("Cannot upgrade");
+            BuildPanel.setFarmButtonTrueOrFalse(false);
+            BuildPanel.setFarmLabel(farmBuilding.getBuildingName() + " max level");
         }
     }
 
     //Sends the level of warehouse to the GUI
     public static void setWarehouse() {
 
-        for(int i = 2; i < 20; i++) {
-            try {
-                String wareHouseLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(wareHouseLabel, 0, 9).equals("Warehouse")) {
-                    BuildPanel.setWareHouseLabel("Warehouse " + substring(wareHouseLabel, 10, 20));
-                    if(substring(wareHouseLabel, 10, 20).equals("")) {
-                        BuildPanel.setWareHouseLabel("Warehouse (Level 0)");
-                        BuildPanel.setWareHouseButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setWareHouseLabel("Warehouse (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeWareHouseLabel("Cannot upgrade");
-                BuildPanel.setWareHouseButtonTrueOrFalse(false);
-                BuildPanel.setWareHouseLabel("Warehouse max level");
-            }
+        VillageBuildings wareHouseBuilding = null;
+        try {
+            wareHouseBuilding = new VillageBuildings("Warehouse", 0, 9, 10, 20);
+            wareHouseBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeWareHouseLabel("Cannot upgrade");
+            BuildPanel.setWareHouseButtonTrueOrFalse(false);
+            BuildPanel.setWareHouseLabel(wareHouseBuilding.getBuildingName() + " max level");
         }
     }
 
     //Sends the level of hiding place to the GUI
     public static void setHidingPlace() {
 
-        for(int i = 2; i < 20; i++) {
-            try {
-                String hidingPlaceLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(hidingPlaceLabel, 0, 6).equals("Hiding")) {
-                    BuildPanel.setHidingPlaceLabel("Hiding " + substring(hidingPlaceLabel, 7, 22));
-                    if(substring(hidingPlaceLabel, 13, 22).equals("")) {
-                        BuildPanel.setHidingPlaceLabel("Hiding place (Level 0)");
-                        BuildPanel.setHidingPlaceButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setHidingPlaceLabel("Hiding place (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeHidingPlaceLabel("Cannot upgrade");
-                BuildPanel.setHidingPlaceButtonTrueOrFalse(false);
-                BuildPanel.setHidingPlaceLabel("Hiding place max level");
-            }
+        VillageBuildings hidingBuilding = null;
+        try {
+            hidingBuilding = new VillageBuildings("Hiding", 0, 6, 7, 22);
+            hidingBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeHidingPlaceLabel("Cannot upgrade");
+            BuildPanel.setHidingPlaceButtonTrueOrFalse(false);
+            BuildPanel.setHidingPlaceLabel(hidingBuilding.getBuildingName() + " max level");
         }
     }
 
     //Sends the level of wall to the GUI
     public static void setWall() {
 
-        for(int i = 2; i < 20; i++) {
-            try {
-                String wallLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(wallLabel, 0, 4).equals("Wall")) {
-                    BuildPanel.setWallLabel("Wall " + substring(wallLabel, 5, 14));
-                    if(substring(wallLabel, 5, 14).equals("")) {
-                        BuildPanel.setWallLabel("Wall (Level 0)");
-                        BuildPanel.setWallButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setWallLabel("Wall (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeWallLabel("Cannot upgrade");
-                BuildPanel.setWallButtonTrueOrFalse(false);
-                BuildPanel.setWallLabel("Wall max level");
-            }
+        VillageBuildings wallBuilding = null;
+        try {
+            wallBuilding = new VillageBuildings("Wall", 0, 4, 5, 14);
+            wallBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeWallLabel("Cannot upgrade");
+            BuildPanel.setWallButtonTrueOrFalse(false);
+            BuildPanel.setWallLabel(wallBuilding.getBuildingName() + " max level");
         }
     }
 
     //Sends the level of academy to the GUI
     public static void setAcademy() {
 
-        for(int i = 2; i < 20; i++) {
-            try {
-                String academyLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
-                if(substring(academyLabel, 0, 7).equals("Academy")) {
-                    BuildPanel.setAcademyLabel("Academy " + substring(academyLabel, 8, 16));
-                    if(substring(academyLabel, 8, 16).equals("")) {
-                        BuildPanel.setAcademyLabel("Academy (Level 0)");
-                        BuildPanel.setAcademyButtonTrueOrFalse(false);
-                    }
-                    break;
-                }
-                else {
-                    BuildPanel.setAcademyLabel("Academy (Level 0)");
-                }
-            }
-            catch(NoSuchElementException e) {
-                BuildPanel.setUpgradeAcademyLabel("Cannot upgrade");
-                BuildPanel.setAcademyButtonTrueOrFalse(false);
-                BuildPanel.setAcademyLabel("Academy max level");
-            }
+        VillageBuildings academyBuilding = null;
+        try {
+            academyBuilding = new VillageBuildings("Academy", 0, 7, 8, 16);
+            academyBuilding.setBuilding();
+        }
+        catch (NoSuchElementException e) {
+            BuildPanel.setUpgradeAcademyLabel("Cannot upgrade");
+            BuildPanel.setAcademyButtonTrueOrFalse(false);
+            BuildPanel.setAcademyLabel(academyBuilding.getBuildingName() + " max level");
         }
     }
 
@@ -1060,7 +912,9 @@ public class Village {
             incoming = WebAutomation.driver.findElement(By.xpath("//*[@id=\"show_incoming_units\"]/h4")).getText();
 
             if(substring(incoming, 0, 8).equals("Incoming")) {
-                BuildPanel.setVillageIncomingLabel(WebAutomation.driver.findElement(By.xpath("//*[@id=\"header_info\"]/tbody/tr/td[7]/table/tbody/tr[1]/td/table/tbody/tr/td[2]")).getText() + " Attacks incoming");
+                BuildPanel.setVillageIncomingLabel(WebAutomation.driver.findElement(By.xpath("//*[@id=\"header_info\"]" +
+                        "/tbody/tr/td[7]/table/tbody/tr[1]/td/table/tbody/tr/td[2]")).getText() +
+                        " Attacks incoming");
             }
         }
         catch(NoSuchElementException e) {

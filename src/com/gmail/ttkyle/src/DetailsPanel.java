@@ -41,7 +41,7 @@ public class DetailsPanel extends JPanel {
         final JTextField passwordField = new JTextField(10);
 
         String[] serverList = {"World en58       "    , "World en59", "World en60", "World en61", "World en62",
-                               "World en63", "World en64", "World en65"};
+                               "World en63", "World en64", "World en65", "World en66"};
 
         serverListComboBox = new JComboBox(serverList);
         serverListComboBox.setSelectedIndex(7);

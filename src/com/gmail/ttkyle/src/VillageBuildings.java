@@ -34,7 +34,48 @@ public class VillageBuildings {
 
                 String buildingName = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildings\"]/tbody/tr[" + i + "]/td[1]")).getText();
                 if(substring(buildingName, startOfBuildingName, endOfBuildingName).equals(this.buildingName)) {
-                    BuildPanel.setStableLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    if(this.buildingName.equals("Stable")) {
+                        BuildPanel.setStableLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Village")) {
+                        BuildPanel.setVillageHQLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Barracks")) {
+                        BuildPanel.setBarracksLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Workshop")) {
+                        BuildPanel.setWorkShopLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Smithy")) {
+                        BuildPanel.setSmithyLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Market")) {
+                        BuildPanel.setMarketLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Timber")) {
+                        BuildPanel.setTimberLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Clay")) {
+                        BuildPanel.setClayLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Iron")) {
+                        BuildPanel.setIronLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Farm")) {
+                        BuildPanel.setFarmLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Warehouse")) {
+                        BuildPanel.setWareHouseLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Hiding")) {
+                        BuildPanel.setHidingPlaceLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Wall")) {
+                        BuildPanel.setWallLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
+                    if(this.buildingName.equals("Academy")) {
+                        BuildPanel.setAcademyLabel(this.buildingName + substring(buildingName, startOfLevelBuilding, endOfLevelBuilding));
+                    }
                     if(substring(buildingName, startOfLevelBuilding, endOfLevelBuilding).equals("")) {
 
                         if(this.buildingName.equals("Stable")) {

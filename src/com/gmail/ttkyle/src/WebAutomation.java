@@ -109,7 +109,7 @@ public class WebAutomation  {
             //Waits for the VillageHQ to load then gets the building levels and resource generation
             //driver.get("http://en63.tribalwars.net/game.php?village=119799&screen=main");
             System.out.println(currentlySelectedServer + ".tribalwars.net/game.php?village=34634&screen=main");
-            driver.get( currentlySelectedServer + ".tribalwars.net/game.php?village=34634&screen=main");
+            driver.get( currentlySelectedServer + ".tribalwars.net/game.php?village=300322&screen=main");
             Village.getAllBuildingCosts();
 
             //updates all the buildings and resources on load
@@ -266,6 +266,14 @@ public class WebAutomation  {
         if(currentlySelectedServer.equals("en65")) {
             try {
                 downloader("https://dl.dropbox.com/s/rnp66dutpnfuypg/village.txt?dl=1");
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        if(currentlySelectedServer.equals("en66")) {
+            try {
+                downloader("https://www.dropbox.com/s/5ufeijank5c223k/village.txt?dl=1");
             }
             catch (IOException e) {
                 e.printStackTrace();

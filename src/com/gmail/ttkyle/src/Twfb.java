@@ -1,4 +1,6 @@
-package com.gmail.ttkyle.src; /**
+package com.gmail.ttkyle.src;
+
+/**
  TWFB (Tribalwars Farm Bot) will eventually be a full fledged bot.
  It will farm barbarian villages and players a like once it's fully done.
  It will have automated troop recruiting based on user desires.
