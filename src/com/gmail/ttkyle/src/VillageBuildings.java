@@ -43,7 +43,7 @@ public class VillageBuildings {
                     break;
                 }
                 else {
-                    BuildPanel.setStableLabel("Stable (Level 0)");
+                    BuildPanel.setStableLabel(this.buildingName + " (Level 0)");
                 }
             }
             catch(NoSuchElementException e) {
