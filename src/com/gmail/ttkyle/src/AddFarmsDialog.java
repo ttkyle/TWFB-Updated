@@ -45,19 +45,19 @@ public class AddFarmsDialog extends JDialog {
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                    AddFarmsTroops.setSpearTextFieldFarmAdder("");
-                    AddFarmsTroops.setArcherTextFieldFarmAdder("");
-                    AddFarmsTroops.setAxeTextFieldFarmAdder("");
-                    AddFarmsTroops.setCatapultTextFieldFarmAdder("");
-                    AddFarmsTroops.setHeavyCalTextFieldFarmAdder("");
-                    AddFarmsTroops.setLightCalTextFieldFarmAdder("");
-                    AddFarmsTroops.setMountedArcherTextFieldFarmAdder("");
-                    AddFarmsTroops.setNobleTextFieldFarmAdder("");
-                    AddFarmsTroops.setPaladinTextFieldFarmAdder("");
-                    AddFarmsTroops.setRamTextFieldFarmAdder("");
-                    AddFarmsTroops.setScoutTextFieldFarmAdder("");
-                    AddFarmsTroops.setSwordTextFieldFarmAdder("");
-                }
+                AddFarmsTroops.setSpearTextFieldFarmAdder("");
+                AddFarmsTroops.setArcherTextFieldFarmAdder("");
+                AddFarmsTroops.setAxeTextFieldFarmAdder("");
+                AddFarmsTroops.setCatapultTextFieldFarmAdder("");
+                AddFarmsTroops.setHeavyCalTextFieldFarmAdder("");
+                AddFarmsTroops.setLightCalTextFieldFarmAdder("");
+                AddFarmsTroops.setMountedArcherTextFieldFarmAdder("");
+                AddFarmsTroops.setNobleTextFieldFarmAdder("");
+                AddFarmsTroops.setPaladinTextFieldFarmAdder("");
+                AddFarmsTroops.setRamTextFieldFarmAdder("");
+                AddFarmsTroops.setScoutTextFieldFarmAdder("");
+                AddFarmsTroops.setSwordTextFieldFarmAdder("");
+            }
         });
 
         setVisible(false);

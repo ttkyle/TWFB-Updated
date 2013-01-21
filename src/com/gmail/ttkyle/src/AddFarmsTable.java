@@ -125,10 +125,10 @@ public class AddFarmsTable extends JPanel {
                                 //do nothing
                             }
                             else {
-                            AddVillagePanel.displayFarmVillagesAfterVillageAdd("15000.txt");
-                            AddVillagePanel.filterCurrentFarms();
-                            sortAllRowsBy(model, 5, true);
-                            table.changeSelection(0, 0, false, false);
+                                AddVillagePanel.displayFarmVillagesAfterVillageAdd("15000.txt");
+                                AddVillagePanel.filterCurrentFarms();
+                                sortAllRowsBy(model, 5, true);
+                                table.changeSelection(0, 0, false, false);
                             }
                         }
                         catch (IOException e1) {
@@ -485,11 +485,3 @@ public class AddFarmsTable extends JPanel {
         }
     }
 }
-
-
-
-
-
-
-
-

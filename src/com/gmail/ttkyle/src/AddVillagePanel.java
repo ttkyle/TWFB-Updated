@@ -174,45 +174,45 @@ public class AddVillagePanel extends JPanel {
     }
 
     static public void writeToVillage2(File village) {
-    try {
-        FileWriter writer = new FileWriter(village, true);
-        BufferedWriter bufferedWriter = new BufferedWriter(writer);
-        bufferedWriter.write("lol");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("500");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("600");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("10");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("11 ");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("12 ");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("13");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("14");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("15");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("16");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("17");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("18");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("19");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("20");
-        bufferedWriter.write(", ");
-        bufferedWriter.write("21");
-        bufferedWriter.write(", ");
-        bufferedWriter.newLine();
-        bufferedWriter.close();
+        try {
+            FileWriter writer = new FileWriter(village, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+            bufferedWriter.write("lol");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("500");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("600");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("10");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("11 ");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("12 ");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("13");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("14");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("15");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("16");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("17");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("18");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("19");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("20");
+            bufferedWriter.write(", ");
+            bufferedWriter.write("21");
+            bufferedWriter.write(", ");
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+        }
+        catch (IOException e) {
+        }
     }
-    catch (IOException e) {
-    }
-}
 
     public static String[] readLines(String filename) throws IOException {
         FileReader fileReader = new FileReader(filename);
@@ -509,7 +509,7 @@ public class AddVillagePanel extends JPanel {
                     //do nothing but load
                 }
 
-            if((s = br2.readLine()) != null) {
+                if((s = br2.readLine()) != null) {
                     for (int t = 0; t < farmList.length; t++) {
                         try {
                             farmList = s.split(",");
@@ -523,24 +523,24 @@ public class AddVillagePanel extends JPanel {
                 if(i >= 0  && i < 1 ) {
                     if(distanceMethod(Double.parseDouble(values[2]), 346.0,
                             Double.parseDouble(values[3]), 243.0) <= 15 &&
-                    distanceMethod(Double.parseDouble(values[2]), 346.0,
-                            Double.parseDouble(values[3]), 243.0) != 0.0 ) {
+                            distanceMethod(Double.parseDouble(values[2]), 346.0,
+                                    Double.parseDouble(values[3]), 243.0) != 0.0 ) {
 
                         Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0,
                                 Double.parseDouble(values[3]), 243.0);
 
                         //AddFarmsTargetJTable.addFarmsTable.setValueAt(values[0], count, 0);
-                       // AddFarmsTargetJTable.addFarmsTable.setValueAt(values[1], count, 1);
-                       // AddFarmsTargetJTable.addFarmsTable.setValueAt(values[2], count, 2);
-                       // AddFarmsTargetJTable.addFarmsTable.setValueAt(values[3], count, 3);
-                       // AddFarmsTargetJTable.addFarmsTable.setValueAt(newValue, count, 4);
+                        // AddFarmsTargetJTable.addFarmsTable.setValueAt(values[1], count, 1);
+                        // AddFarmsTargetJTable.addFarmsTable.setValueAt(values[2], count, 2);
+                        // AddFarmsTargetJTable.addFarmsTable.setValueAt(values[3], count, 3);
+                        // AddFarmsTargetJTable.addFarmsTable.setValueAt(newValue, count, 4);
                         count++;
-                   }
+                    }
                 }
             }
         }
-            fr.close();
-            br.close();
+        fr.close();
+        br.close();
     }
 
     public static void findFarms(String fileName) {

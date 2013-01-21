@@ -8,6 +8,7 @@ import java.io.IOException;
  */
 public class AppGui {
 
+    public MainFrame frame;
     public void drawUI() {
 
         //Draws the UI at 800x780 pixels and sets the title
@@ -15,7 +16,6 @@ public class AppGui {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
 
-                JFrame frame = null;
                 try {
                     frame = new MainFrame("TWFB - Tribal Wars Farm Bot");
                 } catch (IOException e) {

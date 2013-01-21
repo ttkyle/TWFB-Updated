@@ -16,7 +16,7 @@ import org.openqa.selenium.StaleElementReferenceException;
  * left if they are
  */
 public class ConstructOneThread implements Runnable {
-   public static boolean constructionFlagOne = false;
+    public static boolean constructionFlagOne = false;
 
 
     ConstructOneThread() {
@@ -42,13 +42,13 @@ public class ConstructOneThread implements Runnable {
                     //if neither total has time then nothing is building
                     if(Village.getTotalTwo() == 0 && Village.getTotalOne() == 0) {
 
-                        BuildingConstructionPanel.setAssignmentOneLabel("No Construction");
-                        BuildingConstructionPanel.setDurationOneLabel("N/A");
-                        BuildingConstructionPanel.setCompletionOneLabel("N/A");
+                        Twfb.twfbAppGui.frame.setAssignmentOne("No Construction");
+                        Twfb.twfbAppGui.frame.setDurationOne("N/A -- 1");
+                        Twfb.twfbAppGui.frame.setCompletionOne("N/A -- 1");
 
-                        BuildingConstructionPanel.setAssignmentTwoLabel("No Construction");
-                        BuildingConstructionPanel.setDurationTwoLabel("N/A");
-                        BuildingConstructionPanel.setCompletionTwoLabel("N/A");
+                        Twfb.twfbAppGui.frame.setAssignmentTwo("Set non-static");
+                        Twfb.twfbAppGui.frame.setDurationTwo("N/A -- 2 ");
+                        Twfb.twfbAppGui.frame.setCompletionTwo("N/A -- 2 ");
                     }
 
                     //if the second total has a value then we need to transfer values over
@@ -64,13 +64,13 @@ public class ConstructOneThread implements Runnable {
                         Village.setTotalOneSeventh(Village.getTotalTwoSeventh());
                         Village.setTotalOneEighth(Village.getTotalTwoEighth());
 
-                        BuildingConstructionPanel.setAssignmentOneLabel(BuildingConstructionPanel.getAssignmentTwoLabel().getText());
-                        BuildingConstructionPanel.setDurationOneLabel(BuildingConstructionPanel.getDurationTwoLabel().getText());
-                        BuildingConstructionPanel.setCompletionOneLabel(BuildingConstructionPanel.getCompletionTwoLabel().getText());
+                        Twfb.twfbAppGui.frame.setAssignmentOne(BuildingConstructionPanel.getAssignmentTwo().getText());
+                        Twfb.twfbAppGui.frame.setDurationOne(BuildingConstructionPanel.getDurationTwo().getText());
+                        Twfb.twfbAppGui.frame.setCompletionOne(BuildingConstructionPanel.getCompletionTwo().getText());
 
-                        BuildingConstructionPanel.setAssignmentTwoLabel("No Construction");
-                        BuildingConstructionPanel.setDurationTwoLabel("N/A");
-                        BuildingConstructionPanel.setCompletionTwoLabel("N/A");
+                        Twfb.twfbAppGui.frame.setAssignmentOne("No Construction");
+                        Twfb.twfbAppGui.frame.setDurationTwo("N/A");
+                        Twfb.twfbAppGui.frame.setCompletionTwo("N/A");
 
                         Village.setTotalTwo(0);
                         Village.setTotalTwoOne(0);

@@ -210,7 +210,7 @@ public class AttackTable extends JPanel {
                             e1.printStackTrace();
                         }
                         catch(NullPointerException e2) {
-                          e2.printStackTrace();
+                            e2.printStackTrace();
                         }
 
                         randomAccessFile.close();

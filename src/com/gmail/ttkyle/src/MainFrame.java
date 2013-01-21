@@ -185,8 +185,30 @@ public class MainFrame extends JFrame {
         BuildPanel.setHidingPlaceButtonTrueOrFalse(true);
     }
 
-    public BuildingConstructionPanel getBuildingConstructionPanel() {
-        return buildingConstructionPanel;
+    public void setAssignmentOne(String args) {
+        buildingConstructionPanel.setAssignmentOne(args);
     }
+
+    public void setAssignmentTwo(String args) {
+        buildingConstructionPanel.setAssignmentTwo(args);
+    }
+
+    public void setDurationOne(String args) {
+        buildingConstructionPanel.setDurationOne(args);
+    }
+
+    public void setDurationTwo(String args) {
+        buildingConstructionPanel.setDurationTwo(args);
+    }
+
+    public void setCompletionOne(String args) {
+        buildingConstructionPanel.setCompletionOne(args);
+    }
+
+    public void setCompletionTwo(String args) {
+        buildingConstructionPanel.setCompletionTwo(args);
+    }
+
+
 
 }

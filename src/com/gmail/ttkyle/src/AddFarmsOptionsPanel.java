@@ -72,7 +72,7 @@ public class AddFarmsOptionsPanel extends JPanel{
         gc.gridy = 0;
         add(distanceLabel, new GridBagConstraints( 0, 0, 1, 1, 1.0,
                 1.0, GridBagConstraints.CENTER, GridBagConstraints.NONE,
-                 new Insets(0, -4, 0, 0 ), 0, 0 ) );
+                new Insets(0, -4, 0, 0 ), 0, 0 ) );
 
         gc.gridx = 0;
         gc.gridy = 1;

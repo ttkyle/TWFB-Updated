@@ -16,8 +16,6 @@ import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URI;
 
-import static org.apache.commons.lang.StringUtils.substring;
-
 
 /**
  * Web automation class.  This class is used to automate the web browser.
@@ -29,11 +27,11 @@ public class WebAutomation  {
     static WebDriver driver;
     static String userName;
     static String password;
-    Village playerVillage;
 
     private static String currentlySelectedServer;
 
-    public void login(String user, String pass) throws InterruptedException, IOException {
+    public static void login(String user, String pass) throws InterruptedException {
+
 
         FirefoxProfile firefoxProfile = new FirefoxProfile();
 
@@ -42,7 +40,7 @@ public class WebAutomation  {
         firefoxProfile.setPreference("browser.download.dir","C:\\Users\\kyle\\IdeaProjects\\TWFB");
         firefoxProfile.setPreference("browser.helperApps.neverAsk.saveToDisk","text/csv");
 
-        playerVillage = new Village();
+
         driver = new FirefoxDriver();
 
         //driver.navigate().to("http://en65.tribalwars.net/map/village.txt");
@@ -82,7 +80,7 @@ public class WebAutomation  {
 
         String currentUrl = null;
         try {
-             currentUrl = driver.getCurrentUrl().substring(7, 57);
+            currentUrl = driver.getCurrentUrl().substring(7, 57);
         }
         catch(StringIndexOutOfBoundsException e) {
             System.out.println("NO ACCOUNT ON SERVER");
@@ -102,28 +100,28 @@ public class WebAutomation  {
 
 
             //display units in village to the GUI
-            playerVillage.updateTroops();
-            playerVillage.isAttacked();
-            playerVillage.setWoodResource();
-            playerVillage.setClayResource();
-            playerVillage.setIronResource();
+            Village.updateTroops();
+            Village.isAttacked();
+            Village.setWoodResource();
+            Village.setClayResource();
+            Village.setIronResource();
 
             //Waits for the VillageHQ to load then gets the building levels and resource generation
             //driver.get("http://en63.tribalwars.net/game.php?village=119799&screen=main");
             System.out.println(currentlySelectedServer + ".tribalwars.net/game.php?village=34634&screen=main");
             driver.get( currentlySelectedServer + ".tribalwars.net/game.php?village=300322&screen=main");
-            playerVillage.getAllBuildingCosts();
+            Village.getAllBuildingCosts();
 
             //updates all the buildings and resources on load
-            playerVillage.updateBuildings();
+            Village.updateBuildings();
 
             Thread.sleep(500);
-            playerVillage.constructionOne();
-            playerVillage.constructionTwo();
-            playerVillage.constructionOneGetNumbers();
-            playerVillage.constructionOneGetTime();
-            playerVillage.constructionTwoGetNumbers();
-            playerVillage.constructionTwoGetTime();
+            Village.constructionOne();
+            Village.constructionTwo();
+            Village.constructionOneGetNumbers();
+            Village.constructionOneGetTime();
+            Village.constructionTwoGetNumbers();
+            Village.constructionTwoGetTime();
             Thread.sleep(500);
 
             //two new thread to keep updating resources on any page and keeping watch for incoming attacks
@@ -133,7 +131,7 @@ public class WebAutomation  {
             BuildingResourceCostThread buildingCosts = new BuildingResourceCostThread();
             ConstructOneThread constructOneThread = new ConstructOneThread();
 
-            if(playerVillage.getTotalOne() > 0) {
+            if(Village.getTotalOne() > 0) {
                 ConstructOneThread.constructionFlagOne = true;
             }
 
@@ -148,11 +146,6 @@ public class WebAutomation  {
                     "NO VILLAGE IN THIS WORLD",
                     JOptionPane.ERROR_MESSAGE);
         }
-    }
-
-
-    public Village getPlayerVillage() {
-        return playerVillage;
     }
 
     public void openRally() throws InterruptedException {
@@ -288,7 +281,3 @@ public class WebAutomation  {
         }
     }
 }
-
-
-
-
