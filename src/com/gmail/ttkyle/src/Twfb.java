@@ -15,8 +15,7 @@ package com.gmail.ttkyle.src;
 
 import java.io.IOException;
 
-
-public  class Twfb {
+public class Twfb {
     public static void main(String[] args) throws IOException, InterruptedException {
         AppGui twfbAppGui = new AppGui();
         twfbAppGui.drawUI();

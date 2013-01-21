@@ -16,7 +16,7 @@ public class MainFrame extends JFrame {
     public TroopsDetailPanel troopsDetailPanel;
     public static AddFarmsDialog addFarmsDialog;
     public static serverNotOnAccountDialog serverNotOnAccountDialog;
-
+    public BuildingConstructionPanel buildingConstructionPanel;
 
     public MainFrame(String title) throws IOException {
         super(title);
@@ -29,7 +29,7 @@ public class MainFrame extends JFrame {
         BuildPanel buildPanel = new BuildPanel();
         CurrentVillagePanel currentVillagePanel = new CurrentVillagePanel();
         AddVillagePanel addVillagePanel = new AddVillagePanel();
-        BuildingConstructionPanel buildingConstructionPanel = new BuildingConstructionPanel();
+        buildingConstructionPanel = new BuildingConstructionPanel();
         ServerTimePanel serverTimePanel = new ServerTimePanel();
         attackTable2 = new AttackTable();
         addFarmsDialog = new AddFarmsDialog();
@@ -183,6 +183,10 @@ public class MainFrame extends JFrame {
         BuildPanel.setAcademyButtonTrueOrFalse(true);
         BuildPanel.setIronButtonTrueOrFalse(true);
         BuildPanel.setHidingPlaceButtonTrueOrFalse(true);
+    }
+
+    public BuildingConstructionPanel getBuildingConstructionPanel() {
+        return buildingConstructionPanel;
     }
 
 }

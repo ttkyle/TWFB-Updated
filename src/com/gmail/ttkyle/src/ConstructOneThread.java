@@ -42,13 +42,13 @@ public class ConstructOneThread implements Runnable {
                     //if neither total has time then nothing is building
                     if(Village.getTotalTwo() == 0 && Village.getTotalOne() == 0) {
 
-                        BuildingConstructionPanel.setAssignmentOne("No Construction");
-                        BuildingConstructionPanel.setDurationOne("N/A");
-                        BuildingConstructionPanel.setCompletionOne("N/A");
+                        BuildingConstructionPanel.setAssignmentOneLabel("No Construction");
+                        BuildingConstructionPanel.setDurationOneLabel("N/A");
+                        BuildingConstructionPanel.setCompletionOneLabel("N/A");
 
-                        BuildingConstructionPanel.setAssignmentTwo("No Construction");
-                        BuildingConstructionPanel.setDurationTwo("N/A");
-                        BuildingConstructionPanel.setCompletionTwo("N/A");
+                        BuildingConstructionPanel.setAssignmentTwoLabel("No Construction");
+                        BuildingConstructionPanel.setDurationTwoLabel("N/A");
+                        BuildingConstructionPanel.setCompletionTwoLabel("N/A");
                     }
 
                     //if the second total has a value then we need to transfer values over
@@ -64,13 +64,13 @@ public class ConstructOneThread implements Runnable {
                         Village.setTotalOneSeventh(Village.getTotalTwoSeventh());
                         Village.setTotalOneEighth(Village.getTotalTwoEighth());
 
-                        BuildingConstructionPanel.setAssignmentOne(BuildingConstructionPanel.getAssignmentTwo().getText());
-                        BuildingConstructionPanel.setDurationOne(BuildingConstructionPanel.getDurationTwo().getText());
-                        BuildingConstructionPanel.setCompletionOne(BuildingConstructionPanel.getCompletionTwo().getText());
+                        BuildingConstructionPanel.setAssignmentOneLabel(BuildingConstructionPanel.getAssignmentTwoLabel().getText());
+                        BuildingConstructionPanel.setDurationOneLabel(BuildingConstructionPanel.getDurationTwoLabel().getText());
+                        BuildingConstructionPanel.setCompletionOneLabel(BuildingConstructionPanel.getCompletionTwoLabel().getText());
 
-                        BuildingConstructionPanel.setAssignmentTwo("No Construction");
-                        BuildingConstructionPanel.setDurationTwo("N/A");
-                        BuildingConstructionPanel.setCompletionTwo("N/A");
+                        BuildingConstructionPanel.setAssignmentTwoLabel("No Construction");
+                        BuildingConstructionPanel.setDurationTwoLabel("N/A");
+                        BuildingConstructionPanel.setCompletionTwoLabel("N/A");
 
                         Village.setTotalTwo(0);
                         Village.setTotalTwoOne(0);
