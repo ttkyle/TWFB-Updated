@@ -33,11 +33,11 @@ public class ResourceUpdateThread implements Runnable {
                 Village.setPopulation();
 
                 ////////convert current population and resources to ints so they can be compared
-                Village.setCurrentPopulation(Integer.parseInt(WebAutomation.driver.findElement(By.xpath("//*[@id=\"pop_current_label\"]")).getText()));
-                Village.setMaxPopulation(Integer.parseInt(WebAutomation.driver.findElement(By.xpath("//*[@id=\"pop_max_label\"]")).getText()));
-                Village.setCurrentWood(Integer.parseInt(WebAutomation.driver.findElement(By.xpath("//*[@id=\"wood\"]")).getText()));
-                Village.setCurrentClay(Integer.parseInt(WebAutomation.driver.findElement(By.xpath("//*[@id=\"stone\"]")).getText()));
-                Village.setCurrentIron(Integer.parseInt(WebAutomation.driver.findElement(By.xpath("//*[@id=\"iron\"]")).getText()));
+                Twfb.twfbAppGui.frame.setCurrentPopulation(Integer.parseInt(WebAutomation.driver.findElement(By.xpath("//*[@id=\"pop_current_label\"]")).getText()));
+                Twfb.twfbAppGui.frame.setMaxPopulation(Integer.parseInt(WebAutomation.driver.findElement(By.xpath("//*[@id=\"pop_max_label\"]")).getText()));
+                Twfb.twfbAppGui.frame.setCurrentWood(Integer.parseInt(WebAutomation.driver.findElement(By.xpath("//*[@id=\"wood\"]")).getText()));
+                Twfb.twfbAppGui.frame.setCurrentClay(Integer.parseInt(WebAutomation.driver.findElement(By.xpath("//*[@id=\"stone\"]")).getText()));
+                Twfb.twfbAppGui.frame.setCurrentIron(Integer.parseInt(WebAutomation.driver.findElement(By.xpath("//*[@id=\"iron\"]")).getText()));
 
                 //make the thread sleep
                 Thread.sleep(10000);

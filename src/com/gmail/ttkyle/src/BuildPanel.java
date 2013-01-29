@@ -232,7 +232,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(1500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -257,7 +257,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(1500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -282,7 +282,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(1500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -307,7 +307,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(1500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -332,7 +332,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(1500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -357,7 +357,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(1500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -382,7 +382,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(1500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -407,7 +407,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(1500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -432,7 +432,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(1500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -457,7 +457,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(2500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -481,7 +481,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(2500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -505,7 +505,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(2500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -529,7 +529,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     Thread.sleep(2500);
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
@@ -553,7 +553,7 @@ public class BuildPanel extends JPanel {
 
                 try {
                     WebAutomation.driver.get("http://en64.tribalwars.net/game.php?village=86805&screen=main");
-                    Village.getAllBuildingCosts();
+                    Twfb.twfbAppGui.frame.getAllBuildingCosts();
                     Village.updateBuildings();
                     JavascriptExecutor js = (JavascriptExecutor) WebAutomation.driver;
                     js.executeScript("main_buildlink_hide.click()");

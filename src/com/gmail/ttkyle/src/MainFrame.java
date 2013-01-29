@@ -17,6 +17,7 @@ public class MainFrame extends JFrame {
     public static AddFarmsDialog addFarmsDialog;
     public static serverNotOnAccountDialog serverNotOnAccountDialog;
     public BuildingConstructionPanel buildingConstructionPanel;
+    public Village village;
 
     public MainFrame(String title) throws IOException {
         super(title);
@@ -34,6 +35,7 @@ public class MainFrame extends JFrame {
         attackTable2 = new AttackTable();
         addFarmsDialog = new AddFarmsDialog();
         serverNotOnAccountDialog = new serverNotOnAccountDialog();
+        village = new Village();
 
 
         File village2 = new File("village.txt");
@@ -209,6 +211,509 @@ public class MainFrame extends JFrame {
         buildingConstructionPanel.setCompletionTwo(args);
     }
 
+    public int getVillageHQWoodCost() {
+        return village.getVillageHQWoodCost();
+    }
 
+    public void setVillageHQWoodCost(int newNumber) {
+        village.setVillageHQWoodCost(newNumber);
+    }
+
+    public  int getVillageHQClayCost() {
+        return village.getVillageHQClayCost();
+    }
+
+    public void setVillageHQClayCost(int newNumber) {
+        village.setVillageHQClayCost(newNumber);
+    }
+
+    public int getVillageHQIronCost() {
+        return village.getVillageHQClayCost();
+    }
+
+    public void setVillageHQIronCost(int newNumber) {
+        village.setVillageHQIronCost(newNumber);
+    }
+
+    public boolean isVillageHQHasCost() {
+        return village.isVillageHQHasCost();
+    }
+
+    public void setVillageHQHasCost(boolean newBoolean) {
+        village.villageHQHasCost(newBoolean);
+    }
+
+    public int getBarracksWoodCost() {
+        return village.getBarracksWoodCost();
+    }
+
+    public void setBarracksWoodCost(int newNumber) {
+        village.setBarracksWoodCost(newNumber);
+    }
+
+    public int getBarracksClayCost() {
+        return village.getBarracksClayCost();
+    }
+
+    public void setBarracksClayCost(int newNumber) {
+        village.setBarracksClayCost(newNumber);
+    }
+
+    public int getBarracksIronCost() {
+        return village.getBarracksIronCost();
+    }
+
+    public void setBarracksIronCost(int newNumber) {
+        village.setBarracksIronCost(newNumber);
+    }
+
+    public boolean barracksHasCost() {
+        return village.wareHouseHasCost();
+    }
+
+    public void setBarracksHasCost(boolean newBoolean) {
+        village.setBarracksHasCost(newBoolean);
+    }
+
+    public int getStableWoodCost() {
+        return village.getStableWoodCost();
+    }
+
+    public void setStableWoodCost(int newNumber) {
+      village.setStableWoodCost(newNumber);
+    }
+
+    public int getStableClayCost() {
+        return village.getStableClayCost();
+    }
+
+    public void setStableClayCost(int newNumber) {
+        village.setStableClayCost(newNumber);
+    }
+
+    public int getStableIronCost() {
+        return village.getStableIronCost();
+    }
+
+    public void setStableIronCost(int newNumber) {
+        village.setStableIronCost(newNumber);
+    }
+
+    public boolean stableHasCost() {
+        return village.stableHasCost();
+    }
+
+    public void setStableHasCost(boolean newBoolean) {
+        village.setStableHasCost(newBoolean);
+    }
+
+    public int getWorkShopWoodCost() {
+        return village.getWorkShopWoodCost();
+    }
+
+    public void setWorkShopWoodCost(int newNumber) {
+        village.setWorkShopWoodCost(newNumber);
+    }
+
+    public int getWorkShopClayCost() {
+        return village.getWorkShopClayCost();
+    }
+
+    public void setWorkShopClayCost(int newNumber) {
+        village.setWorkShopClayCost(newNumber);
+    }
+
+    public int getWorkShopIronCost() {
+        return village.getWorkShopIronCost();
+    }
+
+    public void setWorkShopIronCost(int newNumber) {
+        village.setWorkShopIronCost(newNumber);
+    }
+
+    public boolean workShopHasCost() {
+        return village.workShopHasCost();
+    }
+
+    public void setWorkShopHasCost(boolean newBoolean) {
+        village.setWorkShopHasCost(newBoolean);
+    }
+
+    public int getSmithyWoodCost() {
+        return village.getSmithyWoodCost();
+    }
+
+    public void setSmithyWoodCost(int newNumber) {
+        village.setSmithyWoodCost(newNumber);
+    }
+
+    public int getSmithyClayCost() {
+        return village.getSmithyClayCost();
+    }
+
+    public void setSmithyClayCost(int newNumber) {
+        village.setSmithyClayCost(newNumber);
+    }
+
+    public int getSmithyIronCost() {
+        return village.getSmithyIronCost();
+    }
+
+    public void setSmithyIronCost(int newNumber) {
+        village.setSmithyIronCost(newNumber);
+    }
+
+    public boolean smithyHasCost() {
+        return village.smithyHasCost();
+    }
+
+    public void setSmithyHasCost(boolean newBoolean) {
+        village.setSmithyHasCost(newBoolean);
+    }
+
+    public int getMarketWoodCost() {
+        return village.getMarketWoodCost();
+    }
+
+    public void setMarketWoodCost(int newNumber) {
+        village.setMarketWoodCost(newNumber);
+    }
+
+    public int getMarketClayCost() {
+        return village.getMarketClayCost();
+    }
+
+    public void setMarketClayCost(int newNumber) {
+        village.setMarketClayCost(newNumber);
+    }
+
+    public int getMarketIronCost() {
+        return village.getMarketIronCost();
+    }
+
+    public void setMarketIronCost(int newNumber) {
+        village.setMarketIronCost(newNumber);
+    }
+
+    public boolean marketHasCost() {
+        return village.marketHasCost();
+    }
+
+    public void setMarketHasCost(boolean newBoolean) {
+        village.setMarketHasCost(newBoolean);
+    }
+
+    public int getTimberWoodCost() {
+        return village.getTimberWoodCost();
+    }
+
+    public void setTimberWoodCost(int newNumber) {
+        village.setTimberWoodCost(newNumber);
+    }
+
+    public int getTimberClayCost() {
+        return village.getTimberClayCost();
+    }
+
+    public  void setTimberClayCost(int newNumber) {
+        village.setTimberClayCost(newNumber);
+    }
+
+    public int getTimberIronCost() {
+        return village.getTimberIronCost();
+    }
+
+    public void setTimberIronCost(int newNumber) {
+        village.setTimberIronCost(newNumber);
+    }
+
+    public boolean timberHasCost() {
+        return village.timberHasCost();
+    }
+
+    public void setTimberHasCost(boolean newBoolean) {
+        village.setTimberHasCost(newBoolean);
+    }
+
+    public int getClayWoodCost() {
+        return village.getClayWoodCost();
+    }
+
+    public void setClayWoodCost(int newNumber) {
+        village.setClayWoodCost(newNumber);
+    }
+
+    public int getClayClayCost() {
+        return village.getClayClayCost();
+    }
+
+    public void setClayClayCost(int newNumber) {
+        village.setClayClayCost(newNumber);
+    }
+
+    public int getClayIronCost() {
+        return village.getClayIronCost();
+    }
+
+    public void setClayIronCost(int newNumber) {
+        village.setClayIronCost(newNumber);
+    }
+
+    public boolean clayHasCost() {
+        return village.clayHasCost();
+    }
+
+    public void setClayHasCost(boolean newBoolean) {
+        village.setClayHasCost(newBoolean);
+    }
+
+    public int getIronWoodCost() {
+        return village.getIronWoodCost();
+    }
+
+    public void setIronWoodCost(int newNumber) {
+        village.setIronWoodCost(newNumber);
+    }
+
+    public int getIronClayCost() {
+        return village.getIronClayCost();
+    }
+
+    public void setIronClayCost(int newNumber) {
+        village.setIronClayCost(newNumber);
+    }
+
+    public int getIronIronCost() {
+        return village.getIronIronCost();
+    }
+
+    public void setIronIronCost(int newNumber) {
+        village.setIronIronCost(newNumber);
+    }
+
+    public boolean ironHasCost() {
+        return village.ironHasCost();
+    }
+
+    public void setIronHasCost(boolean newBoolean) {
+        village.setIronHasCost(newBoolean);
+    }
+
+    public int getFarmWoodCost() {
+        return village.getFarmWoodCost();
+    }
+
+    public void setFarmWoodCost(int newNumber) {
+        village.setFarmWoodCost(newNumber);
+    }
+
+    public int getFarmClayCost() {
+        return village.getFarmClayCost();
+    }
+
+    public void setFarmClayCost(int newNumber) {
+        village.setFarmClayCost(newNumber);
+    }
+
+    public int getFarmIronCost() {
+        return village.getFarmIronCost();
+    }
+
+    public void setFarmIronCost(int newNumber) {
+        village.setFarmIronCost(newNumber);
+    }
+
+    public boolean farmHasCost() {
+        return village.farmHasCost();
+    }
+
+    public void setFarmHasCost(boolean newBoolean) {
+        village.setFarmHasCost(newBoolean);
+    }
+
+    public int getWareHouseWoodCost() {
+        return village.getWareHouseWoodCost();
+    }
+
+    public void setWareHouseWoodCost(int newNumber) {
+        village.setWareHouseWoodCost(newNumber);
+    }
+
+    public int getWareHouseClayCost() {
+        return village.getWareHouseClayCost();
+    }
+
+    public void setWareHouseClayCost(int newNumber) {
+        village.setWareHouseClayCost(newNumber);
+    }
+
+    public int getWareHouseIronCost() {
+        return village.getWareHouseIronCost();
+    }
+
+    public void setWareHouseIronCost(int newNumber) {
+        village.setWareHouseIronCost(newNumber);
+    }
+
+    public boolean wareHouseHasCost() {
+        return village.wareHouseHasCost();
+    }
+
+    public void setWareHouseHasCost(boolean newBoolean) {
+        village.setWareHouseHasCost(newBoolean);
+    }
+
+    public int getWallWoodCost() {
+        return village.getWallWoodCost();
+    }
+
+    public void setWallWoodCost(int newNumber) {
+        village.setWallWoodCost(newNumber);
+    }
+
+    public int getWallClayCost() {
+        return village.getWallClayCost();
+    }
+
+    public void setWallClayCost(int newNumber) {
+        village.setWallClayCost(newNumber);
+    }
+
+    public int getWallIronCost() {
+        return village.getWallIronCost();
+    }
+
+    public void setWallIronCost(int newNumber) {
+        village.setWallIronCost(newNumber);
+    }
+
+    public boolean wallHasCost() {
+        return village.wallHasCost();
+    }
+
+    public void setWallHasCost(boolean newBoolean) {
+        village.setWallHasCost(newBoolean);
+    }
+
+    public int getAcademyWoodCost() {
+        return village.getAcademyWoodCost();
+    }
+
+    public void setAcademyWoodCost(int newNumber) {
+        village.setAcademyWoodCost(newNumber);
+    }
+
+    public int getAcademyClayCost() {
+        return village.getAcademyClayCost();
+    }
+
+    public void setAcademyClayCost(int newNumber) {
+        village.setAcademyClayCost(newNumber);
+    }
+
+    public int getAcademyIronCost() {
+        return village.getAcademyIronCost();
+    }
+
+    public void setAcademyIronCost(int newNumber) {
+        village.setAcademyIronCost(newNumber);
+    }
+
+    public boolean academyHasCost() {
+        return village.academyHasCost();
+    }
+
+    public void setAcademyHasCost(boolean newBoolean) {
+        village.setAcademyHasCost(newBoolean);
+    }
+
+    public int getHidingPlaceWoodCost() {
+        return village.getHidingPlaceWoodCost();
+    }
+
+    public void setHidingPlaceWoodCost(int newNumber) {
+        village.setHidingPlaceWoodCost(newNumber);
+    }
+
+    public int getHidingPlaceClayCost() {
+        return village.getHidingPlaceClayCost();
+    }
+
+    public void setHidingPlaceClayCost(int newNumber) {
+        village.setHidingPlaceClayCost(newNumber);
+    }
+
+    public int getHidingPlaceIronCost() {
+        return village.getHidingPlaceIronCost();
+    }
+
+    public void setHidingPlaceIronCost(int newNumber) {
+        village.setHidingPlaceIronCost(newNumber);
+    }
+
+    public boolean hidingPlaceHasCost() {
+        return village.hidingPlaceHasCost();
+    }
+
+    public void setHidingPlaceHasCost(boolean newBoolean) {
+        village.setHidingPlaceHasCost(newBoolean);
+    }
+
+    public int getCurrentWood() {
+        return village.getCurrentWood();
+    }
+
+    public void setCurrentWood(int newNumber) {
+        village.setCurrentWood(newNumber);
+    }
+
+    public int getCurrentClay() {
+        return village.getCurrentClay();
+    }
+
+    public void setCurrentClay(int newNumber) {
+        village.setCurrentClay(newNumber);
+    }
+
+    public int getCurrentIron() {
+        return village.getCurrentIron();
+    }
+
+    public void setCurrentIron(int newNumber) {
+        village.setCurrentIron(newNumber);
+    }
+
+    public int getCurrentPopulation() {
+        return village.getCurrentPopulation();
+    }
+
+    public void setCurrentPopulation(int newNumber) {
+        village.setCurrentPopulation(newNumber);
+    }
+
+    public int getMaxPopulation() {
+        return village.getMaxPopulation();
+    }
+
+    public void setMaxPopulation(int newNumber) {
+        village.setMaxPopulation(newNumber);
+    }
+
+    public void getAllBuildingCosts() {
+        village.getVillageHQCost();
+        village.getBarracksCost();
+        village.getStableCost();
+        village.getWorkShopCost();
+        village.getSmithtyCost();
+        village.getMarketCost();
+        village.getTimberCost();
+        village.getClayCost();
+        village.getIronCost();
+        village.getFarmCost();
+        village.getWareHouseCost();
+        village.getWallCost();
+        village.getAcademyCost();
+        village.getHidingPlaceCost();
+    }
 
 }

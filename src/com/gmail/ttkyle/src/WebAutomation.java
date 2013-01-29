@@ -110,7 +110,7 @@ public class WebAutomation  {
             //driver.get("http://en63.tribalwars.net/game.php?village=119799&screen=main");
             System.out.println(currentlySelectedServer + ".tribalwars.net/game.php?village=34634&screen=main");
             driver.get( currentlySelectedServer + ".tribalwars.net/game.php?village=300322&screen=main");
-            Village.getAllBuildingCosts();
+            Twfb.twfbAppGui.frame.getAllBuildingCosts();
 
             //updates all the buildings and resources on load
             Village.updateBuildings();

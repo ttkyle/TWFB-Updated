@@ -4,8 +4,6 @@ package com.gmail.ttkyle.src;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 
-import java.awt.*;
-
 /**
  * This thread runs every 5 seconds. The purpose of this thread
  * is to use information gathered when the user logs in or
@@ -38,14 +36,14 @@ public class BuildingResourceCostThread implements Runnable {
             while(true) {
 
                 //if the village HQ wood cost is > 0 then set hasCost flag as true
-                if(Village.getVillageHQWoodCost() > 0) {
-                    Village.setVillageHQHasCost(true);
+                if(Twfb.twfbAppGui.frame.getVillageHQWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setVillageHQHasCost(true);
 
                     //determines if the user has enough resources to build the village HQ
                     //if not then the button is greyed
-                    if(Village.getVillageHQWoodCost() > Village.getCurrentWood() ||
-                            Village.getVillageHQClayCost() > Village.getCurrentClay() ||
-                            Village.getVillageHQIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getVillageHQWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getVillageHQClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getVillageHQIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setVillageHQButtonTrueOrFalse(false);
                     }
                 }
@@ -57,14 +55,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the barracks wood cost is > 0 then set hasCost flag as true
-                if(Village.getBarracksWoodCost() > 0) {
-                    Village.setBarracksHasCost(true);
+                if(Twfb.twfbAppGui.frame.getBarracksWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setBarracksHasCost(true);
 
                     //determines if the user has enough resources to build the barracks
                     //if not then the button is greyed
-                    if(Village.getBarracksWoodCost() > Village.getCurrentWood() ||
-                            Village.getBarracksClayCost() > Village.getCurrentClay() ||
-                            Village.getBarracksIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getBarracksWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getBarracksClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getBarracksIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setBarracksButtonTrueOrFalse(false);
                     }
                 }
@@ -76,14 +74,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the stable wood cost is > 0 then set hasCost flag as true
-                if(Village.getStableWoodCost() > 0) {
-                    Village.setStableHasCost(true);
+                if(Twfb.twfbAppGui.frame.getStableWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setStableHasCost(true);
 
                     //determines if the user has enough resources to build the stable
                     //if not then the button is greyed
-                    if(Village.getStableWoodCost() > Village.getCurrentWood() ||
-                            Village.getStableClayCost() > Village.getCurrentClay() ||
-                            Village.getStableIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getStableWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getStableClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getStableIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setStableButtonTrueOrFalse(false);
                     }
                 }
@@ -95,14 +93,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the WorkShop wood cost is > 0 then set hasCost flag as true
-                if(Village.getWorkShopWoodCost() > 0) {
-                    Village.setWorkShopHasCost(true);
+                if(Twfb.twfbAppGui.frame.getWorkShopWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setWorkShopHasCost(true);
 
                     //determines if the user has enough resources to build the workshop
                     //if not then the button is greyed
-                    if(Village.getWorkShopWoodCost() > Village.getCurrentWood() ||
-                            Village.getWorkShopClayCost() > Village.getCurrentClay() ||
-                            Village.getWorkShopIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getWorkShopWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getWorkShopClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getWorkShopIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setWorkShopButtonTrueOrFalse(false);
                     }
                 }
@@ -114,14 +112,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the smithy wood cost is > 0 then set the hasCost flag as true
-                if(Village.getSmithyWoodCost() > 0) {
-                    Village.setSmithyHasCost(true);
+                if(Twfb.twfbAppGui.frame.getSmithyWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setSmithyHasCost(true);
 
                     //determines if the user has enough resources to build the smithy
                     //if not then the button is greyed
-                    if(Village.getSmithyWoodCost() > Village.getCurrentWood() ||
-                            Village.getSmithyClayCost() > Village.getCurrentClay() ||
-                            Village.getSmithyIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getSmithyWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getSmithyClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getSmithyIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setSmithyButtonTrueOrFalse(false);
                     }
                 }
@@ -133,14 +131,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the market wood cost is > 0 then set the hasCost flag as true
-                if(Village.getMarketWoodCost() > 0) {
-                    Village.setMarketHasCost(true);
+                if(Twfb.twfbAppGui.frame.getMarketWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setMarketHasCost(true);
 
                     //determines if the user has enough resources to build the market
                     //if not then the button is greyed
-                    if(Village.getMarketWoodCost() > Village.getCurrentWood() ||
-                            Village.getMarketClayCost() > Village.getCurrentClay() ||
-                            Village.getMarketIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getMarketWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getMarketClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getMarketIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setMarketButtonTrueOrFalse(false);
                     }
                 }
@@ -152,14 +150,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the timber wood cost is > 0 then set the hasCost flag as true
-                if(Village.getTimberWoodCost() > 0) {
-                    Village.setTimberHasCost(true);
+                if(Twfb.twfbAppGui.frame.getTimberWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setTimberHasCost(true);
 
                     //determines if the user has enough resources to build the timber
                     //if not then the button is greyed
-                    if(Village.getTimberWoodCost() > Village.getCurrentWood() ||
-                            Village.getTimberClayCost() > Village.getCurrentClay() ||
-                            Village.getTimberIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getTimberWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getTimberClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getTimberIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setTimberButtonTrueOrFalse(false);
                     }
                 }
@@ -171,14 +169,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the clay wood cost is > 0 then set the hasCost flag as true
-                if(Village.getClayWoodCost() > 0) {
-                    Village.setClayHasCost(true);
+                if(Twfb.twfbAppGui.frame.getClayWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setClayHasCost(true);
 
                     //determines if the user has enough resources to build the clay
                     //if not then grey the button
-                    if(Village.getClayWoodCost() > Village.getCurrentWood() ||
-                            Village.getClayClayCost() > Village.getCurrentClay() ||
-                            Village.getClayIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getClayWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getClayClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getClayIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setClayButtonTrueOrFalse(false);
                     }
                 }
@@ -190,14 +188,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the iron wood cost is > 0 then set the hasCost flag as true
-                if(Village.getIronWoodCost() > 0) {
-                    Village.setIronHasCost(true);
+                if(Twfb.twfbAppGui.frame.getIronWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setIronHasCost(true);
 
                     //determines if the user has enough resources to build the iron
                     //if not then grey the button
-                    if(Village.getIronWoodCost() > Village.getCurrentWood() ||
-                            Village.getIronClayCost() > Village.getCurrentClay() ||
-                            Village.getIronIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getIronWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getIronClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getIronIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setIronButtonTrueOrFalse(false);
                     }
                 }
@@ -209,14 +207,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the farm wood cost is > 0 then set the hasCost flag as true
-                if(Village.getFarmWoodCost() > 0) {
-                    Village.setFarmHasCost(true);
+                if(Twfb.twfbAppGui.frame.getFarmWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setFarmHasCost(true);
 
                     //determines if the user has enough resources to build the farm
                     //if not then grey the button
-                    if(Village.getFarmWoodCost() > Village.getCurrentWood() ||
-                            Village.getFarmClayCost() > Village.getCurrentClay() ||
-                            Village.getFarmIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getFarmWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getFarmClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getFarmIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setFarmButtonTrueOrFalse(false);
                     }
                 }
@@ -228,14 +226,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the warehouse wood cost is > 0 then set the hasCOst flag as true
-                if(Village.getWareHouseWoodCost() > 0) {
-                    Village.setWareHouseHasCost(true);
+                if(Twfb.twfbAppGui.frame.getWareHouseWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setWareHouseHasCost(true);
 
                     //determines if the user has enough resources to build the warehouse
                     //if not then grey the button
-                    if(Village.getWareHouseWoodCost() > Village.getCurrentWood() ||
-                            Village.getWareHouseClayCost() > Village.getCurrentClay() ||
-                            Village.getWareHouseIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getWareHouseWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getWareHouseClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getWareHouseIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setWareHouseButtonTrueOrFalse(false);
                     }
                 }
@@ -247,14 +245,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the wall wood cost > 0 then set the hasCost flag as true
-                if(Village.getWallWoodCost() > 0) {
-                    Village.setWallHasCost(true);
+                if(Twfb.twfbAppGui.frame.getWallWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setWallHasCost(true);
 
                     //determines if the user has enough resources to build the wall
                     //if not then grey the button
-                    if(Village.getWallWoodCost() > Village.getCurrentWood() ||
-                            Village.getWallClayCost() > Village.getCurrentClay() ||
-                            Village.getWallIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getWallWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getWallClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getWallIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setWallButtonTrueOrFalse(false);
                     }
                 }
@@ -266,14 +264,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the academy wood cost > 0 then set the hasCost flag as true
-                if(Village.getAcademyWoodCost() > 0) {
-                    Village.setAcademyHasCost(true);
+                if(Twfb.twfbAppGui.frame.getAcademyWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setAcademyHasCost(true);
 
                     //determines if the user has enough resources to build the academy
                     //if not then grey the button
-                    if(Village.getAcademyWoodCost() > Village.getCurrentWood() ||
-                            Village.getAcademyClayCost() > Village.getCurrentClay() ||
-                            Village.getAcademyIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getAcademyWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getAcademyClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getAcademyIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setAcademyButtonTrueOrFalse(false);
                     }
                 }
@@ -285,14 +283,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the hidingplace wood cost  > 0 then set the hasCost flag as true
-                if(Village.getHidingPlaceWoodCost() > 0) {
-                    Village.setHidingPlaceHasCost(true);
+                if(Twfb.twfbAppGui.frame.getHidingPlaceWoodCost() > 0) {
+                    Twfb.twfbAppGui.frame.setHidingPlaceHasCost(true);
 
                     //determines if the user has enough resources to build the hidingplace
                     //if not then grey the button
-                    if(Village.getHidingPlaceWoodCost() > Village.getCurrentWood() ||
-                            Village.getHidingPlaceClayCost() > Village.getCurrentClay() ||
-                            Village.getHidingPlaceIronCost() > Village.getCurrentIron()) {
+                    if(Twfb.twfbAppGui.frame.getHidingPlaceWoodCost() > Twfb.twfbAppGui.frame.getCurrentWood() ||
+                            Twfb.twfbAppGui.frame.getHidingPlaceClayCost() > Twfb.twfbAppGui.frame.getCurrentClay() ||
+                            Twfb.twfbAppGui.frame.getHidingPlaceIronCost() > Twfb.twfbAppGui.frame.getCurrentIron()) {
                         BuildPanel.setHidingPlaceButtonTrueOrFalse(false);
                     }
                 }
@@ -306,10 +304,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the village HQ costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getVillageHQWoodCost() <= Village.getCurrentWood() &&
-                        Village.getVillageHQClayCost() <= Village.getCurrentClay() &&
-                        Village.getVillageHQIronCost() <= Village.getCurrentIron() &&
-                        Village.isVillageHQHasCost()) {
+                if(Twfb.twfbAppGui.frame.getVillageHQWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getVillageHQClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getVillageHQIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.isVillageHQHasCost()) {
                     BuildPanel.setVillageHQButtonTrueOrFalse(true);
                 }
                 //sets the button to grey otherwise
@@ -320,10 +318,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the barracks costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getBarracksWoodCost() <= Village.getCurrentWood() &&
-                        Village.getBarracksClayCost() <= Village.getCurrentClay() &&
-                        Village.getBarracksIronCost() <= Village.getCurrentIron() &&
-                        Village.isBarracksHasCost()) {
+                if(Twfb.twfbAppGui.frame.getBarracksWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getBarracksClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getBarracksIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.barracksHasCost()) {
                     BuildPanel.setBarracksButtonTrueOrFalse(true);
                 }
                 //sets the button to grey otherwise
@@ -334,10 +332,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the stable costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getStableWoodCost() <= Village.getCurrentWood() &&
-                        Village.getStableClayCost() <= Village.getCurrentClay() &&
-                        Village.getStableIronCost() <= Village.getCurrentIron() &&
-                        Village.isStableHasCost()) {
+                if(Twfb.twfbAppGui.frame.getStableWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getStableClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getStableIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.stableHasCost()) {
                     BuildPanel.setStableButtonTrueOrFalse(true);
                 }
                 //sets the button to grey otherwise
@@ -348,10 +346,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the workshop costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getWorkShopWoodCost() <= Village.getCurrentWood() &&
-                        Village.getWorkShopClayCost() <= Village.getCurrentClay() &&
-                        Village.getWorkShopIronCost() <= Village.getCurrentIron() &&
-                        Village.isWorkShopHasCost()) {
+                if(Twfb.twfbAppGui.frame.getWorkShopWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getWorkShopClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getWorkShopIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.workShopHasCost()) {
                     BuildPanel.setWorkShopButtonTrueOrFalse(true);
                 }
                 //sets the button to grey otherwise
@@ -362,10 +360,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the smithy costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getSmithyWoodCost() <= Village.getCurrentWood() &&
-                        Village.getSmithyClayCost() <= Village.getCurrentClay() &&
-                        Village.getSmithyIronCost() <= Village.getCurrentIron() &&
-                        Village.isSmithyHasCost()) {
+                if(Twfb.twfbAppGui.frame.getSmithyWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getSmithyClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getSmithyIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.smithyHasCost()) {
                     BuildPanel.setSmithyButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -376,10 +374,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the market costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getMarketWoodCost() <= Village.getCurrentWood() &&
-                        Village.getMarketClayCost() <= Village.getCurrentClay() &&
-                        Village.getMarketIronCost() <= Village.getCurrentIron() &&
-                        Village.isMarketHasCost()) {
+                if(Twfb.twfbAppGui.frame.getMarketWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getMarketClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getMarketIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.marketHasCost()) {
                     BuildPanel.setMarketButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -390,10 +388,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the timber costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getTimberWoodCost() <= Village.getCurrentWood() &&
-                        Village.getTimberClayCost() <= Village.getCurrentClay() &&
-                        Village.getTimberIronCost() <= Village.getCurrentIron() &&
-                        Village.isTimberHasCost()) {
+                if(Twfb.twfbAppGui.frame.getTimberWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getTimberClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getTimberIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.timberHasCost()) {
                     BuildPanel.setTimberButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -404,10 +402,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the clay costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getClayWoodCost() <= Village.getCurrentWood() &&
-                        Village.getClayClayCost() <= Village.getCurrentClay() &&
-                        Village.getClayIronCost() <= Village.getCurrentIron() &&
-                        Village.isClayHasCost()) {
+                if(Twfb.twfbAppGui.frame.getClayWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getClayClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getClayIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.clayHasCost()) {
                     BuildPanel.setClayButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -418,10 +416,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the iron costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getIronWoodCost() <= Village.getCurrentWood() &&
-                        Village.getIronClayCost() <= Village.getCurrentClay() &&
-                        Village.getIronIronCost() <= Village.getCurrentIron() &&
-                        Village.isIronHasCost()) {
+                if(Twfb.twfbAppGui.frame.getIronWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getIronClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getIronIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.ironHasCost()) {
                     BuildPanel.setIronButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -432,10 +430,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the farm costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getFarmWoodCost() <= Village.getCurrentWood() &&
-                        Village.getFarmClayCost() <= Village.getCurrentClay() &&
-                        Village.getFarmIronCost() <= Village.getCurrentIron() &&
-                        Village.isFarmHasCost()) {
+                if(Twfb.twfbAppGui.frame.getFarmWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getFarmClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getFarmIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.farmHasCost()) {
                     BuildPanel.setFarmButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -446,10 +444,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the warehouse costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getWareHouseWoodCost() <= Village.getCurrentWood() &&
-                        Village.getWareHouseClayCost() <= Village.getCurrentClay() &&
-                        Village.getWareHouseIronCost() <= Village.getCurrentIron() &&
-                        Village.isWareHouseHasCost()) {
+                if(Twfb.twfbAppGui.frame.getWareHouseWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getWareHouseClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getWareHouseIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.wareHouseHasCost()) {
                     BuildPanel.setWareHouseButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -460,10 +458,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the wall costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getWallWoodCost() <= Village.getCurrentWood() &&
-                        Village.getWallClayCost() <= Village.getCurrentClay() &&
-                        Village.getWallIronCost() <= Village.getCurrentIron() &&
-                        Village.isWallHasCost()) {
+                if(Twfb.twfbAppGui.frame.getWallWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getWallClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getWallIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.wallHasCost()) {
                     BuildPanel.setWallButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -474,10 +472,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the academy costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getAcademyWoodCost() <= Village.getCurrentWood() &&
-                        Village.getAcademyClayCost() <= Village.getCurrentClay() &&
-                        Village.getAcademyIronCost() <= Village.getCurrentIron() &&
-                        Village.isAcademyHasCost()) {
+                if(Twfb.twfbAppGui.frame.getAcademyWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getAcademyClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getAcademyIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.academyHasCost()) {
                     BuildPanel.setAcademyButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -488,10 +486,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the hidingplace costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.getHidingPlaceWoodCost() <= Village.getCurrentWood() &&
-                        Village.getHidingPlaceClayCost() <= Village.getCurrentClay() &&
-                        Village.getHidingPlaceIronCost() <= Village.getCurrentIron() &&
-                        Village.isHidingPlaceHasCost()) {
+                if(Twfb.twfbAppGui.frame.getHidingPlaceWoodCost() <= Twfb.twfbAppGui.frame.getCurrentWood() &&
+                        Twfb.twfbAppGui.frame.getHidingPlaceClayCost() <= Twfb.twfbAppGui.frame.getCurrentClay() &&
+                        Twfb.twfbAppGui.frame.getHidingPlaceIronCost() <= Twfb.twfbAppGui.frame.getCurrentIron() &&
+                        Twfb.twfbAppGui.frame.hidingPlaceHasCost()) {
                     BuildPanel.setHidingPlaceButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
