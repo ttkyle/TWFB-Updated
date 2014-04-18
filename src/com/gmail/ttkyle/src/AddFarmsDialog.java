@@ -41,7 +41,6 @@ public class AddFarmsDialog extends JDialog {
         AddFarmsTroops addFarmsTroops = new AddFarmsTroops();
         AddFarmsTable addFarmsTable = new AddFarmsTable();
         AddFarmsOptionsPanel addFarmsOptionsPanel = new AddFarmsOptionsPanel();
-
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -61,6 +60,7 @@ public class AddFarmsDialog extends JDialog {
         });
 
         setVisible(false);
+
 
         ////////////First Column/////////////////////
         gc.anchor = GridBagConstraints.NORTHWEST;

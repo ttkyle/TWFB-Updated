@@ -1,5 +1,9 @@
 package com.gmail.ttkyle.src;
 
+import com.gmail.ttkyle.src.AddFarmsOptionsPanel;
+import com.gmail.ttkyle.src.AddFarmsTable;
+import com.gmail.ttkyle.src.AttackTable;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -832,3 +836,5 @@ public class AddVillagePanel extends JPanel {
         return distance;
     }
 }
+
+

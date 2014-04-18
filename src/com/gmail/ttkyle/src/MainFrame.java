@@ -43,10 +43,6 @@ public class MainFrame extends JFrame {
         //Disables frames on GUI creation
         disableButtons();
 
-       AddVillagePanel.displayFarmVillagesInitial("15000.txt");
-       // AddVillagePanel.findFarms("village.txt");
-        //AddVillagePanel.filterCurrentFarms();
-
          TestDownLoadThread testDownLoadThread = new TestDownLoadThread();
         //Details panel listener
         detailsPanel.addDetailListener(new DetailListener() {
