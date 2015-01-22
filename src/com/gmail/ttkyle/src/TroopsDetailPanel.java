@@ -61,19 +61,19 @@ public class TroopsDetailPanel extends JPanel {
         setBackground(bgColor);
 
         //various troop icons
-         spearIcon = new ImageIcon("unitpic\\spear.png");
-         axeIcon = new ImageIcon("unitpic\\axe.png");
-         lightCalIcon = new ImageIcon("unitpic\\lightcal.png");
-         scoutIcon = new ImageIcon("unitpic\\scout.png");
-         swordIcon = new ImageIcon("unitpic\\sword.png");
-         paladinIcon = new ImageIcon("unitpic\\paladin.png");
-         catapultIcon = new ImageIcon("unitpic\\catapult.png");
-         populationCountIcon = new ImageIcon("unitpic\\farmFace.png");
-         nobleIcon = new ImageIcon("unitpic\\snob.png");
-         ramIcon = new ImageIcon("unitpic\\unit_ram.png");
-         mountedArcherIcon = new ImageIcon("unitpic\\unit_marcher.png");
-         heavyCalIcon = new ImageIcon("unitpic\\unit_heavy.png");
-         archerIcon = new ImageIcon("unitpic\\unit_archer.png");
+         spearIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\spear.png");
+         axeIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\axe.png");
+         lightCalIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\lightcal.png");
+         scoutIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\scout.png");
+         swordIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\sword.png");
+         paladinIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\paladin.png");
+         catapultIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\catapult.png");
+         populationCountIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\farmFace.png");
+         nobleIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\snob.png");
+         ramIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\unit_ram.png");
+         mountedArcherIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\unit_marcher.png");
+         heavyCalIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\unit_heavy.png");
+         archerIcon = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\unit_archer.png");
 
         //sets the layout manager of the panel
         setLayout(new GridBagLayout());

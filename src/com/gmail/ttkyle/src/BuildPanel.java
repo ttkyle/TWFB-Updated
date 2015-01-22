@@ -77,24 +77,24 @@ public class BuildPanel extends JPanel {
         setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(outLineColor), "Tribal Wars Building Levels"));
 
         //icons for the various buildings
-        ImageIcon villageHQ = new ImageIcon("unitpic\\main.png");
-        ImageIcon barracks = new ImageIcon("unitpic\\barracks.png");
-        ImageIcon stable = new ImageIcon("unitpic\\stable.png");
-        ImageIcon workShop = new ImageIcon("unitpic\\garage.png");
-        ImageIcon smithy = new ImageIcon("unitpic\\smith.png");
-        ImageIcon market = new ImageIcon("unitpic\\market.png");
-        ImageIcon timber = new ImageIcon("unitpic\\wood.png");
-        ImageIcon clay = new ImageIcon("unitpic\\stone.png");
-        ImageIcon iron = new ImageIcon("unitpic\\iron.png");
-        ImageIcon farm = new ImageIcon("unitpic\\farm.png");
-        ImageIcon wareHouse = new ImageIcon("unitpic\\storage.png");
-        ImageIcon hidingPlace = new ImageIcon("unitpic\\hide.png");
-        ImageIcon wall = new ImageIcon("unitpic\\wall.png");
-        ImageIcon academy = new ImageIcon("unitpic\\academy.png");
-        ImageIcon woodPic = new ImageIcon("unitpic\\woodPic.png");
-        ImageIcon clayPic = new ImageIcon("unitpic\\clayPic.png");
-        ImageIcon ironPic = new ImageIcon("unitpic\\ironPic.png");
-        ImageIcon attPic = new ImageIcon("unitpic\\attack.png");
+        ImageIcon villageHQ = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\main.png");
+        ImageIcon barracks = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\barracks.png");
+        ImageIcon stable = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\stable.png");
+        ImageIcon workShop = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\garage.png");
+        ImageIcon smithy = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\smith.png");
+        ImageIcon market = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\market.png");
+        ImageIcon timber = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\wood.png");
+        ImageIcon clay = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\stone.png");
+        ImageIcon iron = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\iron.png");
+        ImageIcon farm = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\farm.png");
+        ImageIcon wareHouse = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\storage.png");
+        ImageIcon hidingPlace = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\hide.png");
+        ImageIcon wall = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\wall.png");
+        ImageIcon academy = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\academy.png");
+        ImageIcon woodPic = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\woodPic.png");
+        ImageIcon clayPic = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\clayPic.png");
+        ImageIcon ironPic = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\ironPic.png");
+        ImageIcon attPic = new ImageIcon("src\\com\\gmail\\ttkyle\\unitpic\\attack.png");
 
 
         //////////Create all the labels///////////////
